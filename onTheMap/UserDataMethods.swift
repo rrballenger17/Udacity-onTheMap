@@ -11,12 +11,11 @@ import UIKit
 
 class UserDataMethods {
     
-    static var persons: [Person]!
     
 
     static func getPersonData(results: [[String: AnyObject]], completionHandlerForUserData: (success: Bool) -> Void){
         
-        persons = [Person]()
+        Model.persons = []
     
         for index in 0...results.count-1{
             print(index)
@@ -66,18 +65,18 @@ class UserDataMethods {
             input["longitude"] = String(long)
             input["updateTime"] = String(update!)
             
-            let store = Person(input: input)
+            let store = UserData.person(input: input)
             
-            persons.append(store)
+            Model.persons.append(store)
             
-            print("size" + String(persons.count))
+            print("size" + String(Model.persons.count))
             
             print(store.lat)
             
         }
         
         
-        persons = persons.sort { $0.update.compare($1.update) == .OrderedDescending }
+        Model.persons = Model.persons.sort { $0.update.compare($1.update) == .OrderedDescending }
         
         completionHandlerForUserData(success: true)
         

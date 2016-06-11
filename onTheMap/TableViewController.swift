@@ -17,18 +17,18 @@ class TableViewController: UITableViewController{
     // Add the two essential table data source methods here
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if UserDataMethods.persons == nil {
+        if Model.persons == nil {
             return 0
         }
         
-        return UserDataMethods.persons.count;
+        return Model.persons.count;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell =  tableView.dequeueReusableCellWithIdentifier(self.cellReuseIdentifier)! as UITableViewCell
         
-        let persona = UserDataMethods.persons[indexPath.row]
+        let persona = Model.persons[indexPath.row]
         
         cell.textLabel?.text = persona.name
         

@@ -19,6 +19,7 @@
 		946CB5101D076AD300E08ADA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CB50F1D076AD300E08ADA /* Person.swift */; };
 		946CB5121D0787E600E08ADA /* MapViewNewInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CB5111D0787E600E08ADA /* MapViewNewInfoController.swift */; };
 		947A8BEC1D067C0A006CE2F7 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947A8BEB1D067C0A006CE2F7 /* Requests.swift */; };
+		948AFE011D0CC1770094C21F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AFE001D0CC1770094C21F /* Model.swift */; };
 		9493DD541D03721C007A02CB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493DD531D03721C007A02CB /* TableViewController.swift */; };
 		9493DD561D03807C007A02CB /* NavigationCustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493DD551D03807C007A02CB /* NavigationCustomController.swift */; };
 		9493DD581D0383C9007A02CB /* PostViewControllerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493DD571D0383C9007A02CB /* PostViewControllerClass.swift */; };
@@ -63,6 +64,7 @@
 		946CB50F1D076AD300E08ADA /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		946CB5111D0787E600E08ADA /* MapViewNewInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewNewInfoController.swift; sourceTree = "<group>"; };
 		947A8BEB1D067C0A006CE2F7 /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		948AFE001D0CC1770094C21F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9493DD531D03721C007A02CB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9493DD551D03807C007A02CB /* NavigationCustomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCustomController.swift; sourceTree = "<group>"; };
 		9493DD571D0383C9007A02CB /* PostViewControllerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewControllerClass.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				947A8BEB1D067C0A006CE2F7 /* Requests.swift */,
 				946CB50F1D076AD300E08ADA /* Person.swift */,
 				94AE107C1D0C8C46001A7132 /* UserDataMethods.swift */,
+				948AFE001D0CC1770094C21F /* Model.swift */,
 				943D39011D013F19002F8D68 /* Main.storyboard */,
 				943D39041D013F19002F8D68 /* Assets.xcassets */,
 				943D39061D013F19002F8D68 /* LaunchScreen.storyboard */,
@@ -296,6 +299,7 @@
 				947A8BEC1D067C0A006CE2F7 /* Requests.swift in Sources */,
 				9424D77E1D044A97003A82F2 /* NavigationCustomControllerMap.swift in Sources */,
 				946CB5121D0787E600E08ADA /* MapViewNewInfoController.swift in Sources */,
+				948AFE011D0CC1770094C21F /* Model.swift in Sources */,
 				9493DD561D03807C007A02CB /* NavigationCustomController.swift in Sources */,
 				9416E4C51D04C04E009C5E6A /* TabViewController.swift in Sources */,
 				9493DD541D03721C007A02CB /* TableViewController.swift in Sources */,

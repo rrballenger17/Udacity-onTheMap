@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class Person {
+class UserData {
+    
+    struct person{
         
         //init(fullName: String, URL: String, latitude: Double, longitude: Double, updateTime: String) {
         init(input: [String:String]) {
@@ -25,5 +27,6 @@ class Person {
         var lat: Double!
         var long: Double!
         var update: String!
+    }
 
 }
