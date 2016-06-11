@@ -26,12 +26,7 @@ class MapViewNewInfoController: UIViewController, MKMapViewDelegate {
             Requests.taskForPOSTMethod(info.urlString, parameters: parameters, jsonBody: info.jsonBody) { (parsedResult, error) -> Void in
             
                 print("possibly success")
-                dispatch_async(dispatch_get_main_queue()) {
-                    let nav = self.navigationController
-                    nav?.popViewControllerAnimated(false)
-                    nav?.popViewControllerAnimated(true)
-                    
-                }
+                self.popTwoViews()
             }
             
         }else{
@@ -51,13 +46,15 @@ class MapViewNewInfoController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    
     func popTwoViews(){
-        dispatch_async(dispatch_get_main_queue()) {
-            let nav = self.navigationController
-            nav?.popViewControllerAnimated(false)
-            nav?.popViewControllerAnimated(true)
-        }
+        let pres = self.presentingViewController
         
+        dispatch_async(dispatch_get_main_queue()) {
+            pres!.dismissViewControllerAnimated(false, completion: {
+                pres!.dismissViewControllerAnimated(false, completion: nil)
+            })
+        }
     }
     
     
@@ -119,8 +116,7 @@ class MapViewNewInfoController: UIViewController, MKMapViewDelegate {
             
             pinView!.rightCalloutAccessoryView = button
             
-        }
-        else {
+        }else {
             pinView!.annotation = annotation
         }
         
@@ -128,6 +124,11 @@ class MapViewNewInfoController: UIViewController, MKMapViewDelegate {
         
     }
     
+    @IBAction func cancelAction(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
     
     func plotData(){
         

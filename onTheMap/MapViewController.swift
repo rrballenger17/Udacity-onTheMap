@@ -56,8 +56,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 pinView!.rightCalloutAccessoryView = button
              
-            }
-            else {
+            }else {
                 pinView!.annotation = annotation
             }
             
@@ -114,7 +113,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
 
-        UserData.getUserData(self){ (success: Bool) -> Void in
+        UserDataMethods.getUserData(self){ (success: Bool) -> Void in
             
             if(success){
                 dispatch_async(dispatch_get_main_queue()) {

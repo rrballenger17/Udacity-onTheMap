@@ -20,7 +20,7 @@ func move(){
     
     let newViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("PostViewController"))! as! PostViewControllerClass
     
-    self.pushViewController(newViewController, animated: true)
+    self.presentViewController(newViewController, animated: true, completion:  nil)
     
 }
 
@@ -56,11 +56,11 @@ func refresh(){
     
         let navItem = UINavigationItem(title: "title")
     
-        navItem.setLeftBarButtonItems([post, refreshButton], animated: false)
+        navItem.setRightBarButtonItems([post, refreshButton], animated: false)
     
         let logOut = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logOutCalled")
     
-        navItem.setRightBarButtonItem(logOut, animated: false)
+        navItem.setLeftBarButtonItem(logOut, animated: false)
     
         navItem.title = ""
     

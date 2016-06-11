@@ -20,7 +20,7 @@ class NavigationCustomController: UINavigationController{
         
         let newViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("PostViewController"))! as! PostViewControllerClass
     
-        self.pushViewController(newViewController, animated: true)
+        self.presentViewController(newViewController, animated: true, completion:  nil)
         
     }
     
@@ -35,11 +35,15 @@ class NavigationCustomController: UINavigationController{
         
         Requests.logOutMethod(){ () -> Void in
             
-            (UIApplication.sharedApplication().delegate as! AppDelegate).key = nil
+            
             
             dispatch_async(dispatch_get_main_queue()) {
-                let firstView = self.storyboard?.instantiateInitialViewController()
-                self.presentViewController(firstView!, animated: false, completion: nil)
+                
+                let root = (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController
+                
+                root?.dismissViewControllerAnimated(false, completion: nil)
+                
+                
             }
         }
     }
@@ -64,11 +68,11 @@ class NavigationCustomController: UINavigationController{
     
         let navItem = UINavigationItem(title: "title")
     
-        navItem.setLeftBarButtonItems([post, refreshButton], animated: false)
+        navItem.setRightBarButtonItems([post, refreshButton], animated: false)
     
         let logOut = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logOutCalled")
     
-        navItem.setRightBarButtonItem(logOut, animated: false)
+        navItem.setLeftBarButtonItem(logOut, animated: false)
 
         navItem.title = ""
     

@@ -22,6 +22,7 @@
 		9493DD541D03721C007A02CB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493DD531D03721C007A02CB /* TableViewController.swift */; };
 		9493DD561D03807C007A02CB /* NavigationCustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493DD551D03807C007A02CB /* NavigationCustomController.swift */; };
 		9493DD581D0383C9007A02CB /* PostViewControllerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493DD571D0383C9007A02CB /* PostViewControllerClass.swift */; };
+		94AE107D1D0C8C46001A7132 /* UserDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE107C1D0C8C46001A7132 /* UserDataMethods.swift */; };
 		94E0709D1D03378B00E3976C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E0709C1D03378B00E3976C /* MapViewController.swift */; };
 		94E0709F1D03389000E3976C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E0709E1D03389000E3976C /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		9493DD531D03721C007A02CB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9493DD551D03807C007A02CB /* NavigationCustomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCustomController.swift; sourceTree = "<group>"; };
 		9493DD571D0383C9007A02CB /* PostViewControllerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewControllerClass.swift; sourceTree = "<group>"; };
+		94AE107C1D0C8C46001A7132 /* UserDataMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataMethods.swift; sourceTree = "<group>"; };
 		94E0709C1D03378B00E3976C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		94E0709E1D03389000E3976C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 				9416E4C41D04C04E009C5E6A /* TabViewController.swift */,
 				947A8BEB1D067C0A006CE2F7 /* Requests.swift */,
 				946CB50F1D076AD300E08ADA /* UserData.swift */,
+				94AE107C1D0C8C46001A7132 /* UserDataMethods.swift */,
 				943D39011D013F19002F8D68 /* Main.storyboard */,
 				943D39041D013F19002F8D68 /* Assets.xcassets */,
 				943D39061D013F19002F8D68 /* LaunchScreen.storyboard */,
@@ -296,6 +299,7 @@
 				9493DD561D03807C007A02CB /* NavigationCustomController.swift in Sources */,
 				9416E4C51D04C04E009C5E6A /* TabViewController.swift in Sources */,
 				9493DD541D03721C007A02CB /* TableViewController.swift in Sources */,
+				94AE107D1D0C8C46001A7132 /* UserDataMethods.swift in Sources */,
 				946CB5101D076AD300E08ADA /* UserData.swift in Sources */,
 				94E0709D1D03378B00E3976C /* MapViewController.swift in Sources */,
 			);

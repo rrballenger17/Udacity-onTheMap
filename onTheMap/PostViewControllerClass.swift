@@ -98,7 +98,7 @@ class PostViewControllerClass: UIViewController{
         newViewController.post = true
         
         dispatch_async(dispatch_get_main_queue()) {
-            self.navigationController!.pushViewController(newViewController, animated: true)
+            self.presentViewController(newViewController, animated: true, completion:nil)
         }
         
     
@@ -124,7 +124,9 @@ class PostViewControllerClass: UIViewController{
                 self.topLabel.text = "Update the following fields."
             }
         }))
-        self.presentViewController(alert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
         
     }
@@ -162,20 +164,15 @@ class PostViewControllerClass: UIViewController{
             
             
 
-            dispatch_async(dispatch_get_main_queue()) {
-                self.checkOverwrite(oid)
+            
+            self.checkOverwrite(oid)
 
-            }
+            
         }
         
     }
     
-    func goBack(){
-    
-            self.navigationController?.popViewControllerAnimated(true)
 
-    }
-    
     
     struct postStorage{
         var urlString: String!
@@ -220,7 +217,7 @@ class PostViewControllerClass: UIViewController{
         newViewController.info = postData
         
         dispatch_async(dispatch_get_main_queue()) {
-            self.navigationController!.pushViewController(newViewController, animated: true)
+            self.presentViewController(newViewController, animated: true, completion: nil)
         }
         
     }
@@ -273,16 +270,33 @@ class PostViewControllerClass: UIViewController{
     
     override func viewDidLoad() {
         
-        
     }
     
+    
+    @IBOutlet weak var navItem: UINavigationItem!
+    
+    
+ 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         tabBarController?.tabBar.hidden = true
-    
+        
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.topLabel.text = "Update the following fields."
+        }
+        
     }
     
+    
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+
+    }
     
     
     @IBAction func submitButton(sender: AnyObject) {

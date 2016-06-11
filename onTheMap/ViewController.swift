@@ -20,8 +20,16 @@ class ViewController: UIViewController {
     }
     
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setTheStatus("Hello, please sign in.")
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheStatus("Hello, please sign in.")
     }
 
     override func didReceiveMemoryWarning() {
