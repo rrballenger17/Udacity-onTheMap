@@ -9,17 +9,15 @@
 import Foundation
 import UIKit
 
-class UserDataMethods: UIViewController {
+class UserDataMethods {
     
-    
+    static var persons: [Person]!
     
 
     static func getPersonData(results: [[String: AnyObject]], completionHandlerForUserData: (success: Bool) -> Void){
         
-        
-        UserData.persons = []
+        persons = [Person]()
     
-        
         for index in 0...results.count-1{
             print(index)
             
@@ -68,18 +66,18 @@ class UserDataMethods: UIViewController {
             input["longitude"] = String(long)
             input["updateTime"] = String(update!)
             
-            let store = UserData.person(input: input)
+            let store = Person(input: input)
             
-            UserData.persons.append(store)
+            persons.append(store)
             
-            print("size" + String(UserData.persons.count))
+            print("size" + String(persons.count))
             
             print(store.lat)
             
         }
         
         
-        UserData.persons = UserData.persons.sort { $0.update.compare($1.update) == .OrderedDescending }
+        persons = persons.sort { $0.update.compare($1.update) == .OrderedDescending }
         
         completionHandlerForUserData(success: true)
         
@@ -101,6 +99,20 @@ class UserDataMethods: UIViewController {
         
     }
     
+    static func serverError(sender: AnyObject){
+        let alert = UIAlertController(title: "Server Error", message:
+            "Please check your API keys and/or other server information.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: {(alert: UIAlertAction!) in
+            
+        }))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            sender.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
     static func getUserData(sender: AnyObject, completionHandlerForUserData: (success: Bool) -> Void) {
         
         Requests.taskForGETMethod("https://api.parse.com/1/classes/StudentLocation?limit=100", parameters: ["sd":"asd"], slide: false) { (parsedResult, error) -> Void in
@@ -119,7 +131,10 @@ class UserDataMethods: UIViewController {
             
             
             guard let results = parsedResult["results"] as? [[String: AnyObject]] else {
+                
+                self.serverError(sender)
                 print("Cannot find results session")
+                completionHandlerForUserData(success: false)
                 return
             }
             

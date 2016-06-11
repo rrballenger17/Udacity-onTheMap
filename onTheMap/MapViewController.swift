@@ -66,9 +66,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     
     func plotData(){
-        for index in 0...UserData.persons.count - 1{
+        for index in 0...UserDataMethods.persons.count - 1{
             
-            let persona = UserData.persons[index]
+            let persona = UserDataMethods.persons[index]
             
             let coordinate = CLLocationCoordinate2D(
                 latitude: persona.lat,
